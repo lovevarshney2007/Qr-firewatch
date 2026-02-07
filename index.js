@@ -19,6 +19,11 @@ const io = new Server(server, {
 
 setupSignaling(io);
 
+app.get("/", (req, res) => {
+  res.json({ status: "Streaming server running" });
+});
+
+
 server.listen(5000, () => {
   console.log("Streaming signaling server running on port 5000");
 });
